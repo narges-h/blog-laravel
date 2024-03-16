@@ -13,5 +13,8 @@ class PostController extends Controller
     public function adminPage(){
         return view('admin');
     }
+    public function postsPage(){
+        return view('addPost');
+    }
 }
 
