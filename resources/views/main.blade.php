@@ -11,7 +11,8 @@
         <form  style="padding: 1% 0% 1% 1%;direction: ltr;" action="/login" method="get">
             <input style="background-color: #d8ffd8;padding: 10px;border: none;border-radius: 5%;color: #182218;font-family: system-ui;font-weight: 800;"
             type='submit' value="ورود به بخش مدریت">    
-        </form>    
+        </form>   
+        <p style="margin-top: -3%;font-weight: 800;padding-right: 20px;">FOREST</p> 
     </header>
     <div style="background-image:url('geranimo-qzgN45hseN0-unsplash.jpg');background-attachment:fixed;background-size:cover;padding-top: 20%;">
         <p style="background-color:#d8ffd8;text-align: center; padding: 1%;font-weight: 800;

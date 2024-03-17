@@ -6,50 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body >
-<div>
-    <h2 style="text-align:center">Login</h2>
+<body style="background-image:url('back.jpg');background-attachment:fixed;background-size:cover;">
+    <div style="background-color: rgba(255, 255, 255, 0.5);background-blend-mode: multiply;width: 60%;height: 300px;border-radius: 15px;margin-left: 20%;
+    margin-top: 10%;">
+        <h2 style="text-align:center;padding-right: 9%;">ورود</h2>
+        <form style="text-align:center;font-weight: 800;" action="/login" method="post">
+                @if($errors->any())
+                        <div style="color:red;padding-right:3%">
+                            <ul style="list-style: none;">
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                @endif
+                @csrf
+                @if (isset($errorCode))
+                        <div style="color:red">
+                            {{ $errorCode }}
+                        </div>
+                @endif
+                <div style="padding: 1% 4% 1% 0%;">
+                    <input style="width: 35%;height: 40px;direction: rtl;border-radius: 10px;border-style: none;" type="text" name="username">
+                    <label>نام کاربری</label>
+                </div>
+                @if (isset($errorPass))
+                    <div style="color:red">
+                        {{ $errorPass }}
+                    </div>
+                @endif
+                <div style="padding: 1% 3.5% 1% 0%;">
+                    <input style="width: 35%;height: 40px;direction: rtl;border-radius: 10px;border-style: none;" type="password" name="password">
+                    <label>رمز عبور</label>
+                </div>
+                
+                <div style="padding-left: 8%">
+                    <input style="background-color: #d8ffd8;padding: 10px;border: none;color: #182218;font-family: system-ui;font-weight: 800;
+                    width: 37%;height: 40px;direction: rtl;border-radius: 10px;border-style: none;margin-right: 19%;font-size: medium;"
+                    type='submit' value="ورود">
+                </div>
+        </form>
+
+    </div>
   
+       
 
-    <form style="text-align:center" action="/login" method="post">
-        @if($errors->any())
-                <div style="color:red;padding-right:3%">
-                    <ul style="list-style: none;">
-                        @foreach($errors->all() as $error)
-                            <li>{{$error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-        @endif
-        @csrf
-        @if (isset($errorCode))
-                <div style="color:red">
-                    {{ $errorCode }}
-                </div>
-        @endif
-        <div style="padding: 1% 4% 1% 0%;">
-            <label>username</label>
-            <input  type="text" name="username">
-        </div>
-        @if (isset($errorPass))
-            <div style="color:red">
-                {{ $errorPass }}
-            </div>
-        @endif
-        <div style="padding: 1% 3.5% 1% 0%;">
-            <label>password</label>
-            <input  type="password" name="password">
-        </div>
-        
-        <div style="padding-left: 8%">
-            <input style="background-color: deepskyblue;padding: 1%;border: none;border-radius: 5%;color: white;font-family: system-ui;"
-              type='submit' value="Login">
-        </div>
-    </form>
    
-
-</div>
-
   
 </body>
 </html>
+
+
+        
+      
