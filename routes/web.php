@@ -7,6 +7,7 @@ use App\Models\Admin;
 
 
 Route::get('/login', [LoginController::class, 'loginForm']);
+Route::post('/login', [LoginController::class, 'login']);
 Route::get('/main', [PostController::class, 'mainPage']);
 Route::get('/admin', [PostController::class, 'adminPage']);
 Route::get('/addPost', [PostController::class, 'postsPage']);
