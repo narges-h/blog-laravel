@@ -15,13 +15,16 @@
                 <th style="border-bottom:1px solid black">...</th>
                 <th style="border-bottom:1px solid black">...</th>
                 <th style="border-bottom:1px solid black">...</th>
+                <th style="border-bottom:1px solid black">...</th>
             </tr>
         </thead>
         <tbody>
+            @foreach($post as $i)
             <tr>
-                <td></td>
+                <td>{{$i->title}}</td>
+                <td>{{$i->text}}</td>
                 <td >
-                    <form  action="/" method="post">
+                    <form  action="/admin/{{$i->id}}" method="post">
                         @csrf
                         @method('delete')
                         <div >
@@ -31,7 +34,7 @@
                     </form>
                 </td>
                 <td >
-                    <form  action="" method="get">
+                    <form  action="/admin/{{$i->id}}" method="get">
                         @csrf
                         <div>
                             <input style="background-color: deepskyblue;padding: 1%;border: none;border-radius: 5%;color: white;font-family: system-ui;"
@@ -40,6 +43,7 @@
                     </form>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
     <form action="/addPost" method="get">
