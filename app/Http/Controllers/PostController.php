@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Validator;
 class PostController extends Controller
 {
     public function mainPage(){
-        return view('main');
+        $post = Post::get();       
+        return view('main',[
+            'post'=>$post]);
     }
     public function adminPage(){
         $post = Post::get();       
@@ -25,7 +27,7 @@ class PostController extends Controller
     public function addPost(){
         $validate_data = Validator::make(request()->all() , [
             'title' => 'required|string|max:255',
-            'text' => 'required|string|max:1000',
+            'text' => 'required|string|max:1000|min:2',
         ])->validated();
        
         Post::create([
@@ -49,7 +51,7 @@ class PostController extends Controller
     public function updating($id) {
         $validate_data = Validator::make(request()->all() , [
             'title' => 'required|string|max:255',
-            'text' => 'required|string|max:1000',
+            'text' => 'required|string|max:1000|min:2',
         ])->validated();
     
         $post = Post::findOrFail($id);
@@ -59,8 +61,13 @@ class PostController extends Controller
             'text' => $validate_data['text']
     
         ]);
-        return redirect('main/'.$id)->with('success', 'به روزرسانی با موفقیت انجام شد.');
-        // return back();
+        return redirect('admin');
+    }
+    public function detail($id){
+        $post = Post::findOrFail($id);
+        return view('detail' ,[
+            'post' => $post
+        ]);
     }
     
 }

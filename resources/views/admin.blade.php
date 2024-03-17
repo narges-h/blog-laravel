@@ -15,15 +15,16 @@
                 <th style="border-bottom:1px solid black">...</th>
                 <th style="border-bottom:1px solid black">...</th>
                 <th style="border-bottom:1px solid black">...</th>
-                <th style="border-bottom:1px solid black">...</th>
+                <!-- <th style="border-bottom:1px solid black">...</th> -->
             </tr>
         </thead>
         <tbody>
             @foreach($post as $i)
             <tr>
-                <td>{{$i->title}}</td>
-                <td>{{$i->text}}</td>
-                <td >
+                <td style="border-bottom:1px solid black;cursor:pointer">
+                <a style="text-decoration:none;color:black;" href="http://127.0.0.1:8000/detail/{{$i->id}}">
+                {{$i->title}}</a></td>
+                <td style="border-bottom:1px solid black">
                     <form  action="/admin/{{$i->id}}" method="post">
                         @csrf
                         @method('delete')
@@ -33,7 +34,7 @@
                         </div>
                     </form>
                 </td>
-                <td >
+                <td style="border-bottom:1px solid black">
                     <form  action="/admin/{{$i->id}}" method="get">
                         @csrf
                         <div>

@@ -9,24 +9,20 @@
 <body >
     <p style="text-align: center;color: cornflowerblue;font-family: system-ui;">وبلاگ های امروز</p>
 
-    <form  style="text-align:center" action="/login" method="get">
-        <input style="background-color: deepskyblue;padding: 1%;border: none;border-radius: 5%;color: white;font-family: system-ui;"
-         type='submit' value="ورود به بخش مدریت">    
-    </form>
-
     <table style="text-align:center;border-collapse:collapse;border-bottom:1px solid black;width:50%">
-        <tbody>
-            @foreach($post as $i)
+        <thead>
             <tr>
-                <td style="border-bottom:1px solid black">
-                <a style="text-decoration:none;color:black;" href="http://127.0.0.1:8000/detail/{{$i->id}}">{{$i->title}}</td>
+                <th style="border-bottom:1px solid black">...</th>
+                <th style="border-bottom:1px solid black">...</th>            
             </tr>
-            @endforeach
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border-bottom:1px solid black">{{$post->title}}</td>
+                <td style="border-bottom:1px solid black">{{$post->text}}</td>
+            </tr>
         </tbody>
     </table>
-  
-
-
     
 </body>
 </html>

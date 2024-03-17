@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="text-align:center;background-color: linen;" >
-<div style="background-color: cornsilk">
+<body style="text-align:center" >
+<div >
     <h2>ویرایش</h2>
    
 
     <form  action="/admin/{{$post->id}}" method="post">
         @if($errors->any())
-                <div >
-                    <ul>
+                <div style="color:red;padding-right:3%">
+                    <ul style="list-style: none;">
                         @foreach($errors->all() as $error)
                             <li>{{$error }}</li>
                         @endforeach
@@ -38,11 +38,6 @@
             <input style="background-color: deepskyblue;padding: 1%;border: none;border-radius: 5%;color: white;font-family: system-ui;"
               type='submit' value=" ثبت ویرایش">
         </div>
-        @if(session('success'))
-                <script>
-                    window.alert("{{ session('success') }}");
-                </script>
-        @endif
     </form>
             
 

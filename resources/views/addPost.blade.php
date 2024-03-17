@@ -11,9 +11,9 @@
     <p style="text-align: center;color: cornflowerblue;font-family: system-ui;">وبلاگ های امروز</p>
 
     <form style="text-align:center" action="/addPost" method="post">
-        @if($errors->any())
-                <div >
-                    <ul>
+    @if($errors->any())
+                <div style="color:red;padding-right:3%">
+                    <ul style="list-style: none;">
                         @foreach($errors->all() as $error)
                             <li>{{$error }}</li>
                         @endforeach
