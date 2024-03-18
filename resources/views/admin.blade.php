@@ -8,9 +8,9 @@
 </head>
 <body style="direction: rtl;">
     <header style="background-color:#3c583c;top: 0;left: 0;width: 100%;height: 70px;position: absolute;">
-        <form  style="padding: 1% 0% 1% 1%;direction: ltr;" action="/main" method="get">
+        <form  style="padding: 1% 0% 1% 1%;direction: ltr;" action="/clearLogin" method="get">
             <input style="background-color: #70b270;padding: 10px;border: none;border-radius: 5%;color: #182218;font-family: system-ui;font-weight: 800;"
-            type='submit' value="صفحه اصلی">    
+            type='submit' value="خروج">    
         </form>   
         <p style="margin-top: -3%;font-weight: 800;padding-right: 20px;">FOREST</p> 
     </header>

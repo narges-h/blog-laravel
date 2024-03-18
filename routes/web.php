@@ -16,3 +16,5 @@ Route::get('/admin', [PostController::class, 'adminPage']);
 Route::get('/addPost', [PostController::class, 'postsPage']);
 Route::post('/addPost', [PostController::class, 'addPost']);
 Route::get('/detail/{id}', [PostController::class, 'detail']);
+
+Route::get('/clearLogin', [LoginController::class, 'clearLogin']);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود به حساب کاربرری</title>
+    <title>ورود به حساب کاربری</title>
 </head>
 <body style="background-image:url('back.jpg');background-attachment:fixed;background-size:cover;">
     <div style="background-color: rgba(255, 255, 255, 0.5);background-blend-mode: multiply;width: 60%;height: 300px;border-radius: 15px;margin-left: 20%;

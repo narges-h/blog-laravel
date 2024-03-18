@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
+    public function clearLogin(){
+
+        $this->clearCookie();
+
+       return redirect("/login");
+    }
+     
     public function loginForm(){
 
         if(request()->cookie('login') =='1'){
@@ -21,6 +28,10 @@ class LoginController extends Controller
     }
     public function saveCookie(){
         $cookie = cookie('login', '1', 24*60*60); 
+        cookie()->queue($cookie); 
+    }
+    public function clearCookie(){
+        $cookie = cookie('login', '0', 24*60*60); 
         cookie()->queue($cookie); 
     }
     public function login(){
