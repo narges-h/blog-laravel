@@ -8,9 +8,9 @@
 </head>
 <body style="direction: rtl;">
     <header style="background-color:#3c583c;top: 0;left: 0;width: 100%;height: 70px;position: absolute;">
-        <form  style="padding: 1% 0% 1% 1%;direction: ltr;" action="/login" method="get">
+        <form  style="padding: 1% 0% 1% 1%;direction: ltr;" action="/main" method="get">
             <input style="background-color: #70b270;padding: 10px;border: none;border-radius: 5%;color: #182218;font-family: system-ui;font-weight: 800;"
-            type='submit' value="ورود به بخش مدریت">    
+            type='submit' value="صفحه اصلی">    
         </form>   
         <p style="margin-top: -3%;font-weight: 800;padding-right: 20px;">FOREST</p> 
     </header>
@@ -27,7 +27,7 @@
         <tbody style="direction: rtl;">
             @foreach($post as $i)
             <tr>
-                <td style="border:0px solid black;background-color: #d8ffd8;width: 70%;height: 50px;border-radius: 10px;margin-bottom: 2%;">
+                <td style="border:0px solid black;background-color: #d8ffd8;padding-left: 10px;height: 50px;border-radius: 10px;margin-bottom: 2%;">
                 <a style="text-decoration:none;color:#182218;padding-right: 15px;" href="http://127.0.0.1:8000/detail/{{$i->id}}">{{$i->title}}</td>
                 <td>
                     <form  action="/admin/{{$i->id}}" method="post">

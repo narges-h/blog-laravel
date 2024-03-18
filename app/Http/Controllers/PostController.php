@@ -27,7 +27,7 @@ class PostController extends Controller
     public function addPost(){
         $validate_data = Validator::make(request()->all() , [
             'title' => 'required|string|max:255',
-            'text' => 'required|string|max:1000|min:2',
+            'text' => 'required|string|min:2',
         ])->validated();
        
         Post::create([
@@ -51,7 +51,7 @@ class PostController extends Controller
     public function updating($id) {
         $validate_data = Validator::make(request()->all() , [
             'title' => 'required|string|max:255',
-            'text' => 'required|string|max:1000|min:2',
+            'text' => 'required|string|min:2',
         ])->validated();
     
         $post = Post::findOrFail($id);
