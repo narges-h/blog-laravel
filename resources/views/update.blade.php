@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ویرایش پست</title>
 </head>
-<body style="background-image:url('forest.jpeg');background-attachment:fixed;background-size:cover;">
+<body style="background-image:url('http://127.0.0.1:8000/forest.jpeg');background-attachment:fixed;background-size:cover;">
 <div  style="background-color: rgba(255, 255, 255, 0.5);background-blend-mode: multiply;width: 60%;height: 550px;border-radius: 15px;margin-left: 20%;">
     <p style="font-family: system-ui;color:#182218;font-weight: 800;font-size: x-large;text-align:center;">ویرایش</p>
 
     <form style="text-align:center" action="/admin/{{$post->id}}" method="post">
+        @csrf
+        @method('put')
+
         @if($errors->any())
                 <div style="color:red;padding-right:3%">
                     <ul style="list-style: none;">
@@ -20,18 +23,15 @@
                     </ul>
                 </div>
         @endif
-
-        @csrf
-        @method('put')
-
+      
         <div style="padding: 1% 0% 1% 0%;">  
-            <input style="width: 50%;height: 40px;direction: rtl;border-radius: 10px;border-style: none;" type="text" name="title">
+            <input style="width: 50%;height: 40px;direction: rtl;border-radius: 10px;border-style: none;" type="text" name="title"  value="{{$post->title}}">
             <label>عنوان</label>
         </div>
 
         <div style="padding: 1% 0.5% 1% 0%;display:flex;justify-content: center;">
             <!-- <input style="width: 50%;height: 300px;direction: rtl;border-radius: 10px;border-style: none;" type="text" name="text"> -->
-            <textarea style="width: 50%;height: 300px;direction: rtl;border-radius: 10px;border-style: none;resize:none" type="text" name="text"></textarea>
+            <textarea style="width: 50%;height: 300px;direction: rtl;border-radius: 10px;border-style: none;resize:none" type="text" name="text">{{$post->text}}</textarea>
              <label>متن</label>
         </div>
         
