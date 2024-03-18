@@ -17,6 +17,9 @@ class PostController extends Controller
             'post'=>$post]);
     }
     public function adminPage(){
+        if(request()->cookie('login') !='1'){
+            return redirect('/login');
+        }
         $post = Post::get();       
         return view('admin',[
             'post'=>$post]);

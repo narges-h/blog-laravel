@@ -12,7 +12,16 @@ use Illuminate\Support\Facades\Validator;
 class LoginController extends Controller
 {
     public function loginForm(){
+
+        if(request()->cookie('login') =='1'){
+            return redirect('/admin');
+        }
+
         return view('login');
+    }
+    public function saveCookie(){
+        $cookie = cookie('login', '1', 24*60*60); 
+        cookie()->queue($cookie); 
     }
     public function login(){
         $validate_data = Validator::make(request()->all() , [
@@ -26,6 +35,7 @@ class LoginController extends Controller
         $result = Admin::where('password','=',$validate_data['password'])->first();
         // $result = Hash::check($validate_data['password'],$res->password);
         if($result == true){
+            $this->saveCookie();
             return redirect('admin');
         }
         else{

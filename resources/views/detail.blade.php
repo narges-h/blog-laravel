@@ -27,8 +27,11 @@
             <tr>
                 <td style="border:0px solid black;background-color: #d8ffd8;padding: 2%;width: 20%;height: 50px;border-radius:0px 0px 10px 10px;;text-align: right;">{{$post->text}}</td>
             </tr>
+            <tr>
+                <td style="border:0px solid black;background-color: #d8ffd8;padding: 2%;width: 20%;height: 50px;border-radius:0px 0px 10px 10px;;text-align: right;">{{$post->created_at}}</td>
+            </tr>
         </tbody>
     </table>
     
 </body>
-</html>
+</html> 
